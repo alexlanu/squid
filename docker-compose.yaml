@@ -1,0 +1,27 @@
+services:
+  squid:
+    image: alexlanu/squid:${IMG_VER}
+    container_name: ${CONTEINER_NAME}
+    hostname: ${PROXY_HOST_F}
+    env_file:
+     - ./.env
+    environment:
+      - KRB5_TRACE=/dev/stderr
+      - KRB5_KTNAME=/etc/krb5.keytab
+    volumes:
+      - ./conf/squid:/etc/squid:rw
+      - ./logs/squid:/var/log/squid:rw
+      - spool:/var/spool/squid
+      - ./conf/lightsquid/lightsquid.cfg:/var/www/html/lightsquid/lightsquid.cfg:rw
+      - ./report:/var/www/html/lightsquid/report:rw
+
+    command: ["squid", "-N"]
+
+    ports:
+      - "${PROXY_PORT}:3128"
+      - "${ANALYZE_PORT}:80"
+
+    restart: always
+
+volumes:
+  spool:
