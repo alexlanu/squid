@@ -20,6 +20,7 @@ services:
     ports:
       - "${PROXY_PORT}:3128"
       - "${ANALYZE_PORT}:80"
+      - "${SNMP_PORT}:3401/udp"
 
     restart: always
 
