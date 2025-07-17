@@ -1,0 +1,2 @@
+acl ruzone url_regex -i "/etc/squid/ruzone_list"
+acl deny_list url_regex -i "/etc/squid/deny_list"
