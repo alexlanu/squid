@@ -1,5 +1,6 @@
 CONTEINER_NAME=squid-<name>
-IMG_VER=1.6
+IMG_VER=1.7
+PROXY_MODE=<simple|route>
 PROXY_HOST_F=<host_fqdn>
 PROXY_HOST_S=<HOST>
 PROXY_NAME=<proxy_fqdn>
