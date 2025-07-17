@@ -4,7 +4,7 @@ services:
     container_name: ${CONTEINER_NAME}
     hostname: ${PROXY_HOST_F}
     env_file:
-     - ./env
+     - ./.env
     environment:
       - KRB5_TRACE=/dev/stderr
       - KRB5_KTNAME=/etc/krb5.keytab
